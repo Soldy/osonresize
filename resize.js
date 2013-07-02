@@ -11,6 +11,7 @@
             	     horizontalhtml : "<div class='desktophorizontal'></div>",
             	 },           	 
             	 interval : "",
+            	 intervaltime:1000,
             	 marginleft : 0,
             	 margintop : 0,
             	 currentw : 0,
@@ -33,17 +34,17 @@
         
             function osonfitflip() {
                 if (osonfit.currentw > osonfit.currenth ){
-                    oson.resizel.innerHTML=osonfit.flip.horizontalhtml;
+                    osonfit.resizel.innerHTML=osonfit.flip.horizontalhtml;
                     osonfit.originalw = osonfit.flip.horizontalw;
                     osonfit.originalh = osonfit.flip.horizontalh;
-                    oson.resizel.style.width = osonfit.originalw.toString()+"px";
-                    oson.resizel.style.height = osonfit.originalh.toString()+"px"; 
+                    osonfit.resizel.style.width = osonfit.originalw.toString()+"px";
+                    osonfit.resizel.style.height = osonfit.originalh.toString()+"px"; 
                 }	else {
-                    oson.resizel.innerHTML=osonfit.flip.verticalhtml;
+                    osonfit.resizel.innerHTML=osonfit.flip.verticalhtml;
                     osonfit.originalw = osonfit.flip.verticalw;
                     osonfit.originalh = osonfit.flip.verticalh;
-                    oson.resizel.style.width = osonfit.originalw.toString()+"px";
-                    oson.resizel.style.height = osonfit.originalh.toString()+"px"; 
+                    osonfit.resizel.style.width = osonfit.originalw.toString()+"px";
+                    osonfit.resizel.style.height = osonfit.originalh.toString()+"px"; 
                 }
             }        
         
@@ -76,12 +77,12 @@
                     }
                 }
 
-                oson.resizel..style.webkitTransform=fitscalebale;
-                oson.resizel..style.webkitTransformOrigin="0 0";
-                oson.resizel..style.transform=fitscalebale;
-                oson.resizel..style.transformOrigin="0 0";
-                oson.resizel..style.marginLeft=testmargoleft;
-                oson.resizel..style.marginTop=testmargotop;
+                osonfit.resizel.style.webkitTransform=fitscalebale;
+                osonfit.resizel.style.webkitTransformOrigin="0 0";
+                osonfit.resizel.style.transform=fitscalebale;
+                osonfit.resizel.style.transformOrigin="0 0";
+                osonfit.resizel.style.marginLeft=testmargoleft;
+                osonfit.resizel.style.marginTop=testmargotop;
 
             }
             
@@ -113,8 +114,7 @@
             }
             
             function osonfitintervalstart(){
-          //      clearInterval(osondesktopinterval);
-			       osonfit.interval = setInterval("osonfitinterval()", 1000);
+			       osonfit.interval = setInterval("osonfitinterval()", osonfit.intervaltime);
             }
             
             osonfitinterval();
